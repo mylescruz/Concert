@@ -1,9 +1,9 @@
-January_07_2024|Amine|8:00pm|amine.jpg|
-February_04_2024|The Weeknd|8:00pm|theweeknd.jpg|
-March_04_2024|Usher|8:00pm|usher.jpg|
-April_01_2024|Fleetwood Mac|8:00pm|fleetwoodmac.jpg|
-May_06_2024|Luke Combs|8:00pm|lukecombs.jpg|
-June_03_2024|MGMT|8:00pm|mgmt.jpg|
-July_01_2024|Pixies|8:00pm|pixies.jpg|
-August_05_2024|TLC|8:00pm|tlc.jpg|
-September_02_2024|U2|8:00pm|u2.jpg|
+January 07, 2024|Amine|8:00pm|amine.jpg|
+February 04, 2024|The Weeknd|8:00pm|theweeknd.jpg|
+March 04, 2024|Usher|8:00pm|usher.jpg|
+April 01, 2024|Fleetwood Mac|8:00pm|fleetwoodmac.jpg|
+May 06, 2024|Luke Combs|8:00pm|lukecombs.jpg|
+June 03, 2024|MGMT|8:00pm|mgmt.jpg|
+July 01, 2024|Pixies|8:00pm|pixies.jpg|
+August 05, 2024|TLC|8:00pm|tlc.jpg|
+September 02, 2024|U2|8:00pm|u2.jpg|
