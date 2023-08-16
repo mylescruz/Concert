@@ -6,7 +6,7 @@
 # Last Modified: June 1, 2023
 
 from flask import Flask, flash, render_template, session, redirect, url_for, request
-from flask_wtf import FlaskForm
+from flask-wtf import FlaskForm
 from wtforms import StringField, PasswordField, SubmitField
 from wtforms.validators import DataRequired, EqualTo, Length, Regexp
 from concerts import *
