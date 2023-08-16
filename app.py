@@ -78,7 +78,6 @@ class ConfirmationForm(FlaskForm):
 # Home page
 @app.route("/", methods = ['GET'])
 def index():
-    session.clear()
     return redirect(url_for('home'))
 
 @app.route("/home", methods = ['GET'])
