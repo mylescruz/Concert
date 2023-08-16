@@ -1,0 +1,135 @@
+.page-container {
+  margin-left: 12.5%;
+  margin-right: 12.5%;
+  margin-bottom: 5%;
+}
+
+.center {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.center-stack {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.card {
+  margin-top: 5%;
+  margin-bottom: 5%;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.space-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-link {
+  font-size: 1.5rem;
+}
+
+.carousel-img{
+  border-radius: 1%;
+}
+
+/* login.html */
+.underline {
+  text-decoration: underline;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.text-black {
+  color: black;
+}
+
+/* register.html */
+
+/* concerts.html */
+.musician-name {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.musician-date, .musician-time {
+    font-size: 16px;
+}
+
+/* seatview.html */
+.seat:hover {
+    background-color: lightgray;
+}
+
+.stage {
+  width: 60%;
+}
+
+#stage {
+    color: #FFFFFF;
+}
+
+input[type="checkbox"][id^="seatCheckbox"] {
+  display: none;
+}
+
+label {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+label::before {
+  color: white;
+  content: " ";
+  display: block;
+  border-radius: 50%;
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  width: 25px;
+  height: 25px;
+  text-align: center;
+  line-height: 28px;
+  transition-duration: 0.4s;
+  transform: scale(0);
+}
+
+label img {
+  height: 100px;
+  width: 100px;
+  transition-duration: 0.2s;
+  transform-origin: 50% 50%;
+}
+
+:checked+label {
+  border-color: #ddd;
+}
+
+:checked+label::before {
+  content: "✓";
+  background-color: #007bff;
+  transform: scale(1);
+}
+
+:checked+label img {
+  transform: scale(0.9);
+  box-shadow: 0 0 5px #333;
+  z-index: 2;
+}

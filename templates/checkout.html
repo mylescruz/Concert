@@ -1,0 +1,23 @@
+{% if name %}{% extends "baselogin.html" %}{% else %}{% extends "base.html" %}{%endif %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %}Checkout{% endblock %}
+
+{% block page_content %}
+
+<div class = "page-container d-flex justify-content-center">
+    <div class = "card w-75 py-2">
+        <div class = "card-body w-75 mx-auto">
+            <h1 class = "text-center pb-2">Order Summary</h1> 
+            <div class = "d-flex flex-column mx-auto w-75 pb-3">
+                <div class = "d-flex flex-column mx-auto pb-3 text-center">
+                    <h3 class = "py-2">{{ musician }} on {{ date }}</h3>
+                    <h4 class = "py-2">Selected Seats: {{selectedSeats}} Total Price: ${{ price }}</h4>
+                </div>
+                {{ wtf.quick_form(checkoutForm) }}
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

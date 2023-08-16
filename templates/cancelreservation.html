@@ -1,0 +1,29 @@
+{% if name %}{% extends "baselogin.html" %}{% else %}{% extends "base.html" %}{%endif %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %}Cancel Reservation{% endblock %}
+
+{% block page_content %}
+<div class = "page-container d-flex justify-content-center">
+    <div class = "card w-75 py-2">
+        <div class = "card-body w-75 mx-auto">
+            <h1 class = "text-center pb-3">Confirm Cancellation</h1> 
+            <h5 class = "text-center pb-3">Please re-enter your password to cancel your reservation.</h5>
+            <div class = "mx-auto pb-3 w-75">
+                {{ wtf.quick_form(confirmationForm) }}
+            </div>
+        </div>
+    </div>
+</div>
+
+{% with messages = get_flashed_messages() %}
+    {% if messages %}
+        {% for msg in messages %}
+            <p style="color:red;">{{ msg }}</p>
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+
+
+
+{% endblock %}

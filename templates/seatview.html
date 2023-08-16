@@ -1,0 +1,75 @@
+{% if name %}{% extends "baselogin.html" %}{% else %}{% extends "base.html" %}{%endif %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %} Seats for {{ date }} {% endblock %}
+
+{% block page_content %}
+<div class = "page-container d-flex justify-content-center">
+  <div class = "card py-5">
+    <div class = "card-body">
+      <div class = "d-flex flex-column mx-auto">
+        <h1 class = "display-4 text-center">{{ musician }}</h1>
+        <h4 class = "text-center mb-4">{{ date }}</h4>
+        <div class = "mx-auto w-75">
+          <div class = "mx-auto center w-100 bg-dark" id = "stage">
+            <h1 class = "display-4">STAGE</h1>
+          </div>
+          <form method = "POST" action = "/chosenseats">
+            <table class = "mx-auto">
+              <tbody>
+                {% for rowIndex in range(0, numRows) %}
+                <tr class = "seats">
+                  <th scope = "row">{{ rows[rowIndex] }}</th>
+
+                  {% for seatIndex in range(0, numSeats) %}
+                    {% if seats[rowIndex][seatIndex].getIcon() == reserved %}
+                      <td class = "p-1">
+                        <label for="seatCheckbox{{seats[rowIndex][seatIndex].getKey()}}">
+                          <img src="{{seats[rowIndex][seatIndex].getIcon()}}" class = "w-100 h-100"/>
+                        </label>
+                      </td>
+                    {% else %}
+                      <td class = "p-1">
+                        <input type="checkbox" name = "chosenSeats" id="seatCheckbox{{seats[rowIndex][seatIndex].getKey()}}" value = "{{seats[rowIndex][seatIndex].getKey()}}"/>
+                        <label for="seatCheckbox{{seats[rowIndex][seatIndex].getKey()}}">
+                          <img src="{{seats[rowIndex][seatIndex].getIcon()}}" class = "w-100 h-100" id="seatCheckbox{{seats[rowIndex][seatIndex].getKey()}}"/>
+                        </label>
+                      </td>
+                    {% endif %}
+                  {% endfor %}
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+            <div class = "text-center pt-3">
+              {% with messages = get_flashed_messages() %}
+                  {% if messages %}
+                      {% for msg in messages %}
+                          <h6 style="color:red;">{{ msg }}</h6>
+                      {% endfor %}
+                  {% endif %}
+              {% endwith %}
+            </div>
+            <div class = "d-flex justify-content-between w-100 mx-auto pt-3">
+              <button type = "button" onclick = "window.location.href='concerts'" class = "btn btn-secondary btn-lg mx-2">Return</button>
+              <button type = "submit" class="btn btn-primary btn-lg mx-2">Checkout</button> 
+            </div>
+          </form>
+        </div>
+        <div class = "d-flex flex-column flex-lg-row justify-content-lg-center mx-auto w-25 my-5">
+          <div class = "d-flex justify-content-center align-items-center my-2">
+            <img src = "{{ available }}" class = "w-25">
+            <h5 class = "pl-2">Available</h5>
+          </div>
+          <div class = "d-flex justify-content-center align-items-center my-2">
+            <img src = "{{ reserved }}" class = "w-25">
+            <h5 class = "pl-2">Reserved</h5>
+          </div>
+        </div>
+        <h5 class = "mx-auto mb-3">*All tickets are $20*</h5>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,55 @@
+{% if name %}{% extends "baselogin.html" %}{% else %}{% extends "base.html" %}{%endif %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %}Reservations{% endblock %}
+
+{% block page_content %}
+
+<div class = "page-container d-flex justify-content-center">
+    <div class = "card w-100 py-2">
+        <div class = "card-body w-75 mx-auto">
+            <h1 class = "text-center">Hello {{ name }}!</h1> 
+            <div class = "text-center">
+                {% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                        {% for msg in messages %}
+                            <p style="color: green;">{{ msg }}</p>
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+            </div>
+
+            <div class = "mx-auto">
+                {% if concerts %}
+                    <h4 class = "py-3"> Your current reservation(s): </h4>
+                    <div class = "table-responsive">
+                        <table class = "table">
+                            <thead>
+                                <tr>
+                                    <td class = "p-3"><h4>Date</h4></td>
+                                    <td class = "p-3"><h4>Musician</h4></td>
+                                    <td class = "p-3"><h4>Seat(s)</h4></td>
+                                    <td class = "p-3"><h4>Cancel Reservation</h4></td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for i in range(0, numReservations) %}
+                                    <tr>
+                                        <td class = "p-3"><h6>{{concerts[i].getDate()}}</h6></td>
+                                        <td class = "p-3"><h6>{{concerts[i].getMusician()}}</h6></td>
+                                        <td class = "p-3"><h6>{{ reservedSeats[i] }}</h6></td>
+                                        <td class = "p-3"><h6><a href = 'cancelreservation?date={{concerts[i].getDate()}}' class = "underline text-black">Cancel</a></h6></td>
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                {% else %}
+                    <h4 class = "text-center py-3"> No current reservations</h4>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

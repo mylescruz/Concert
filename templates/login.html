@@ -1,0 +1,30 @@
+{% if name %}{% extends "baselogin.html" %}{% else %}{% extends "base.html" %}{%endif %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %}Login{% endblock %}
+
+{% block page_content %}
+
+<div class = "page-container d-flex justify-content-center">
+    <div class = "card w-75 py-2">
+        <div class = "card-body w-75 mx-auto">
+            <h1 class = "text-center">Login</h1> 
+            <div class = "text-center">
+                {% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                        {% for msg in messages %}
+                            <h6 style="color:blue;">{{ msg }}</h6>
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+            </div>
+            <div class = "mx-auto w-75 mb-3">
+                {{ wtf.quick_form(loginForm) }}
+            </div>
+            <h5 class = "pt-3 mx-auto text-center">If you do not have an account, register <span class = "underline"><a href = "register" class = "text-black">here</a></span></h5>
+        </div>
+    </div>
+    </div>
+</div>
+
+{% endblock %}

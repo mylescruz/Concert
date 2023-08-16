@@ -1,0 +1,59 @@
+{% if name %}{% extends "baselogin.html" %}{% else %}{% extends "base.html" %}{%endif %}
+
+{% block title %}Tiny Concerts{% endblock %}
+
+{% block page_content %}
+<div class = "page-container">
+    <div class = "mx-auto w-75 my-4">
+        <div class = "my-5">
+            <h1 class = "text-center display-2">Welcome to Tiny Concert!</h1> 
+            <h3 class = "text-center pt-3">Book concert tickets for your favorite artists performing in our Tiny Concert Hall.</h3>
+            <h3 class = "text-center pt-2 pb-3">Check out all our <span class = "underline"><a href = "concerts" class = "text-black">concerts</a></span> or view some of our upcoming concerts down below.</h3>
+        </div>
+        <div id = "carouselControls" class = "carousel slide" data-ride = "carousel">
+            <div class = "carousel-inner">
+                <div class = "carousel-item active">
+                    <a href = "seatview?date={{ concerts[0].getDate() }}&musician={{ concerts[0].getMusician() }}&time={{ concerts[0].getTime() }}&image={{ concerts[0].getImage() }}">
+                        <img class = "d-block mx-auto w-100 carousel-img" src = "static/{{ concerts[0].getImage() }}" alt = "{{ concerts[0].getMusician() }}">
+                        <div class = "carousel-caption d-none d-md-block">
+                            <h1 class = "display-3">{{ concerts[0].getMusician() }}</h1>
+                            <h3>{{ concerts[0].getDate() }}</h3>
+                        </div>
+                    </a>
+                </div>
+                <div class = "carousel-item">
+                    <a href = "seatview?date={{ concerts[1].getDate() }}&musician={{ concerts[1].getMusician() }}&time={{ concerts[1].getTime() }}&image={{ concerts[1].getImage() }}">
+                        <img class = "d-block w-100 carousel-img" src = "static/{{ concerts[1].getImage() }}" alt = "{{ concerts[1].getMusician() }}">
+                        <div class = "carousel-caption d-none d-md-block">
+                            <h1 class = "display-3">{{ concerts[1].getMusician() }}</h1>
+                            <h3>{{ concerts[1].getDate() }}</h3>
+                        </div>
+                    </a>
+                </div>
+                <div class = "carousel-item">
+                    <a href = "seatview?date={{ concerts[2].getDate() }}&musician={{ concerts[2].getMusician() }}&time={{ concerts[2].getTime() }}&image={{ concerts[2].getImage() }}">
+                        <img class = "d-block w-100 carousel-img" src = "static/{{ concerts[2].getImage() }}" alt = "{{ concerts[2].getMusician() }}">
+                        <div class = "carousel-caption d-none d-md-block">
+                            <h1 class = "display-3">{{ concerts[2].getMusician() }}</h1>
+                            <h3>{{ concerts[2].getDate() }}</h3>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <a class = "carousel-control-prev" href = "#carouselControls" role = "button" data-slide = "prev">
+              <span class = "carousel-control-prev-icon" aria-hidden = "true"></span>
+              <span class = "sr-only">Previous</span>
+            </a>
+            <a class = "carousel-control-next" href = "#carouselControls" role = "button" data-slide = "next">
+              <span class = "carousel-control-next-icon" aria-hidden = "true"></span>
+              <span class = "sr-only">Next</span>
+            </a>
+        </div>
+        <p class = "text-center pt-5">*Disclaimer: All concert dates and times are made up. These concerts are not actually scheduled for these artists.*</p>
+    </div>
+</div>
+
+<script src = "https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity = "sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin = "anonymous"></script>
+<script src = "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity = "sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin = "anonymous"></script>
+<script src = "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity = "sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin = "anonymous"></script>    
+{% endblock %}
