@@ -262,6 +262,7 @@ def bookseats():
 
     for seat in selectedSeats:
         reservingSeat = seatsDic.get(int(seat))
+        pp.pprint(reservingSeat)
 
         row = reservingSeat.getRow()
         number = reservingSeat.getNumber()
@@ -453,7 +454,7 @@ def reserveSeatInUserFile(user, selectedSeat, date):
             f.write(selectedSeat)
             f.close()
     else:
-        with open(userFile,"a+") as f:
+        with open(userFile,"w+") as f:
             f.write(selectedSeat)
             f.close()
 
