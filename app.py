@@ -453,7 +453,7 @@ def reserveSeatInUserFile(user, selectedSeat, date):
             f.write(selectedSeat)
             f.close()
     else:
-        with open(userFile,"w+") as f:
+        with open(userFile,"a+") as f:
             f.write(selectedSeat)
             f.close()
 
