@@ -10,9 +10,9 @@ Each concerts holds up to 50 seats: 5 rows with 10 seats each. <br />
 # To Install and Run
 - Clone the Concert repository.
 - Open the concert repository in a new terminal. 
-- Run the commands:
-   pip install -r requirements.txt
-   python3 -m flask run
+- Run the commands: \n
+   pip install -r requirements.txt \n
+   python3 -m flask run \n
 - Use the given link to access the website.
 
 # Background
