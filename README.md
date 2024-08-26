@@ -8,11 +8,12 @@ Each concerts holds up to 50 seats: 5 rows with 10 seats each. <br />
 - A logged-in user can view current reservations and has the ability to cancel any reservation in the 'Reservations' tab.
 
 # To Install and Run
-Download the Tiny Concert folder.
-On your Command Prompt, open the "Tiny_Concert" folder.
-Open the ".venv" folder.
-Type the command "python -m flask run".
-Use the given link to access the website.
+- Clone the Concert repository.
+- Open the concert repository in a new terminal. 
+- Run the commands:
+   pip install -r requirements.txt
+   python3 -m flask run
+- Use the given link to access the website.
 
 # Background
 Project was originally assigned in the Fall of 2020 in my CSCI 322 Programming Languages class. <br />
